@@ -59,8 +59,36 @@ long getDistance(int sensor = 1,String type = "cm"){
 
 /* ----- [MOTOR METHODS] ----- */
 
-void goForward(){
-    
+void goForward(int time = 1000){
+    digitalWrite(motorAF,HIGH);
+    digitalWrite(motorBF,HIGH);
+    delay(time);
+    digitalWrite(motorAF,LOW);
+    digitalWrite(motorBF,LOW);
+}
+
+void goBackward(int time = 1000){
+    digitalWrite(motorAB,HIGH);
+    digitalWrite(motorBB,HIGH);
+    delay(time);
+    digitalWrite(motorAB,LOW);
+    digitalWrite(motorBB,LOW);
+}
+
+void turnLeft(int time = 1000){
+    digitalWrite(motorAB,HIGH);
+    digitalWrite(motorBF,HIGH);
+    delay(time);
+    digitalWrite(motorAB,LOW);
+    digitalWrite(motorBF,LOW);
+}
+
+void turnRight(int time = 1000){
+    digitalWrite(motorAF,HIGH);
+    digitalWrite(motorBB,HIGH);
+    delay(time);
+    digitalWrite(motorAF,LOW);
+    digitalWrite(motorBB,LOW);
 }
 
 
